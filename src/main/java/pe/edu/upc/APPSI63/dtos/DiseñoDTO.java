@@ -5,35 +5,35 @@ package pe.edu.upc.APPSI63.dtos;
 import java.time.LocalDate;
 
 public class DiseñoDTO {
-    private int idDiseño;
-    private  String nombreDiseño;
-    private String tallaDiseño;
+    private int idProducto;
+    private  String nombreProducto;
+    private String tallaProducto;
     private String PrendaDiseño;
-    private String colorDiseño;
+    private String color;
     private LocalDate Fecha;
 
-    public int getIdDiseño() {
-        return idDiseño;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdDiseño(int idDiseño) {
-        this.idDiseño = idDiseño;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
-    public String getNombreDiseño() {
-        return nombreDiseño;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombreDiseño(String nombreDiseño) {
-        this.nombreDiseño = nombreDiseño;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
-    public String getTallaDiseño() {
-        return tallaDiseño;
+    public String getTallaProducto() {
+        return tallaProducto;
     }
 
-    public void setTallaDiseño(String tallaDiseño) {
-        this.tallaDiseño = tallaDiseño;
+    public void setTallaProducto(String tallaProducto) {
+        this.tallaProducto = tallaProducto;
     }
 
     public String getPrendaDiseño() {
@@ -44,12 +44,12 @@ public class DiseñoDTO {
         this.PrendaDiseño = prendaDiseño;
     }
 
-    public String getColorDiseño() {
-        return colorDiseño;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorDiseño(String colorDiseño) {
-        this.colorDiseño = colorDiseño;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public LocalDate getFecha() {

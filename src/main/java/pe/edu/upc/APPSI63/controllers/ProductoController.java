@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/Prendas")
-public class DiseñoController {
+public class ProductoController {
     @Autowired
     private DiseñoService sS;
     @PostMapping
@@ -23,7 +23,6 @@ public class DiseñoController {
     }
     @GetMapping
     public List<DiseñoDTO> list(){
-
         return sS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
             return m.map(y, DiseñoDTO.class);

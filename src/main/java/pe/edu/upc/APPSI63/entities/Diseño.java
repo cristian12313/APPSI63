@@ -9,36 +9,36 @@ import java.time.LocalDate;
 public class Diseño {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int idDiseño;
+  private int idProducto;
     @Column(name = "nombreProducto",nullable = false,length = 35)
     private  String nombreDiseño;
     @Column(name = "talla",nullable = false)
-    private String tallaDiseño;
+    private String tallaProducto;
     @Column(name = "PrendaDiseño",nullable = false,length = 25)
     private String PrendaDiseño;
     @Column(name = "color",nullable = false,length = 15)
-    private String colorDiseño;
+    private String color;
     @Column(name = "Fecha",nullable = false)
     private LocalDate Fecha;
 
     public Diseño() {
     }
 
-    public Diseño(int idDiseño, String nombreDiseño, String tallaDiseño, String PrendaDiseño, String colorDiseño, LocalDate Fecha) {
-        this.idDiseño = idDiseño;
+    public Diseño(int idProducto, String nombreDiseño, String tallaProducto, String PrendaDiseño, String color, LocalDate Fecha) {
+        this.idProducto = idProducto;
         this.nombreDiseño = nombreDiseño;
-        this.tallaDiseño = tallaDiseño;
+        this.tallaProducto = tallaProducto;
         this.PrendaDiseño = PrendaDiseño;
-        this.colorDiseño = colorDiseño;
+        this.color = color;
         this.Fecha = Fecha;
     }
 
-    public int getIdDiseño() {
-        return idDiseño;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdDiseño(int idDiseño) {
-        this.idDiseño = idDiseño;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getNombreDiseño() {
@@ -49,12 +49,12 @@ public class Diseño {
         this.nombreDiseño = nombreDiseño;
     }
 
-    public String getTallaDiseño() {
-        return tallaDiseño;
+    public String getTallaProducto() {
+        return tallaProducto;
     }
 
-    public void setTallaDiseño(String tallaDiseño) {
-        this.tallaDiseño = tallaDiseño;
+    public void setTallaProducto(String tallaProducto) {
+        this.tallaProducto = tallaProducto;
     }
 
     public String getPrendaDiseño() {
@@ -65,12 +65,12 @@ public class Diseño {
         this.PrendaDiseño = PrendaDiseño;
     }
 
-    public String getColorDiseño() {
-        return colorDiseño;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorDiseño(String colorDiseño) {
-        this.colorDiseño = colorDiseño;
+    public void setColor(String colorDiseño) {
+        this.color = colorDiseño;
     }
 
     public LocalDate getFecha() {
