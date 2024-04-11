@@ -1,5 +1,6 @@
 package pe.edu.upc.APPSI63.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 public class ProductoController {
     @Autowired
     private DiseñoService sS;
+    @Operation(summary = "Registra Producto", description = "Registra Producto")
     @PostMapping
     public void registrar(@RequestBody DiseñoDTO s){
         ModelMapper m=new ModelMapper();
@@ -28,6 +30,7 @@ public class ProductoController {
             return m.map(y, DiseñoDTO.class);
         }).collect(Collectors.toList());
     }
+    @Operation(summary = "Eliminar Producto", description = "Eliminar Producto")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);

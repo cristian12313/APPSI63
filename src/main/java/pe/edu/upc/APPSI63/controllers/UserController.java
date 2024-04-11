@@ -1,5 +1,6 @@
 package pe.edu.upc.APPSI63.controllers;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private UserService sS;
+    @Operation(summary = "Registra Usuario", description = "Registra Usuario")
     @PostMapping
     public void registrar(@RequestBody UserDTO s){
         ModelMapper m=new ModelMapper();
@@ -28,6 +30,7 @@ public class UserController {
             return m.map(y, UserDTO.class);
         }).collect(Collectors.toList());
     }
+    @Operation(summary = "Eliminar Usuario", description = "Eliminar Usuario")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);
