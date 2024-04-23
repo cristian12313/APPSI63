@@ -2,37 +2,44 @@ package pe.edu.upc.APPSI63.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.util.List;
+
 @Entity
 @Table(name = "Usuario")
-public class UserE {
+public class UserE implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
-    @Column(name = "nombreUser",nullable = false,length = 35)
-    private  String nombreUser;
+    @Column(length = 30, unique = true)
+    private String username;
+    @Column(length = 200)
+    private String password;
+    private Boolean enabled;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private List<Role> roles;
     @Column(name = "dni")
     private long dni;
     @Column(name = "telefono")
     private long telefono;
-    @Column(name = "contraseña",nullable = false,length = 35)
-    private String contraseña;
     @Column(name = "Direccion",nullable = false,length = 35)
     private String Direccion;
     @Column(name = "Correo",nullable = false,length = 35)
     private String Correo;
-    @Column(name = "Tipo_usuario",nullable = false,length = 35)
-    private String Tipo_usuario;
+
     public UserE() {
     }
-    public UserE(int idUser, String nombreUser, long dni, long telefono, String contraseña, String direccion, String correo, String tipo_usuario, Long id) {
+    public UserE(int idUser, String username, String password, Boolean enabled, long dni, long telefono, String direccion, String correo, List<Role> roles) {
         this.idUser = idUser;
-        this.nombreUser = nombreUser;
+        this.username = username;
+        this.password = password;
+        this.enabled = enabled;
         this.dni = dni;
         this.telefono = telefono;
-        this.contraseña = contraseña;
         Direccion = direccion;
         Correo = correo;
-        Tipo_usuario = tipo_usuario;
+        this.roles = roles;
     }
 
     public int getIdUser() {
@@ -43,12 +50,28 @@ public class UserE {
         this.idUser = idUser;
     }
 
-    public String getNombreUser() {
-        return nombreUser;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNombreUser(String nombreUser) {
-        this.nombreUser = nombreUser;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public long getDni() {
@@ -67,14 +90,6 @@ public class UserE {
         this.telefono = telefono;
     }
 
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
     public String getDireccion() {
         return Direccion;
     }
@@ -91,11 +106,11 @@ public class UserE {
         Correo = correo;
     }
 
-    public String getTipo_usuario() {
-        return Tipo_usuario;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setTipo_usuario(String tipo_usuario) {
-        Tipo_usuario = tipo_usuario;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

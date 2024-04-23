@@ -2,13 +2,13 @@ package pe.edu.upc.APPSI63.dtos;
 
 public class UserDTO {
     private int idUser;
-    private  String nombreUser;
+    private String username;
+    private String password;
+    private Boolean enabled;
     private long dni;
     private long telefono;
-    private String contraseña;
     private String Direccion;
     private String Correo;
-    private String Tipo_usuario;
 
     public int getIdUser() {
         return idUser;
@@ -18,12 +18,28 @@ public class UserDTO {
         this.idUser = idUser;
     }
 
-    public String getNombreUser() {
-        return nombreUser;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNombreUser(String nombreUser) {
-        this.nombreUser = nombreUser;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public long getDni() {
@@ -41,15 +57,6 @@ public class UserDTO {
     public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
     public String getDireccion() {
         return Direccion;
     }
@@ -64,13 +71,5 @@ public class UserDTO {
 
     public void setCorreo(String correo) {
         Correo = correo;
-    }
-
-    public String getTipo_usuario() {
-        return Tipo_usuario;
-    }
-
-    public void setTipo_usuario(String tipo_usuario) {
-        Tipo_usuario = tipo_usuario;
     }
 }

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 @Entity
 @Table(name = "Producto")
-public class Diseño {
+public class ProductoE {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int idProducto;
@@ -21,10 +21,10 @@ public class Diseño {
     @Column(name = "Fecha",nullable = false)
     private LocalDate Fecha;
 
-    public Diseño() {
+    public ProductoE() {
     }
 
-    public Diseño(int idProducto, String nombreDiseño, String tallaProducto, String PrendaDiseño, String color, LocalDate Fecha) {
+    public ProductoE(int idProducto, String nombreDiseño, String tallaProducto, String PrendaDiseño, String color, LocalDate Fecha) {
         this.idProducto = idProducto;
         this.nombreDiseño = nombreDiseño;
         this.tallaProducto = tallaProducto;

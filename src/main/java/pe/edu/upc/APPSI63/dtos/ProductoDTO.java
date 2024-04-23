@@ -4,7 +4,7 @@ package pe.edu.upc.APPSI63.dtos;
 
 import java.time.LocalDate;
 
-public class DiseñoDTO {
+public class ProductoDTO {
     private int idProducto;
     private  String nombreProducto;
     private String tallaProducto;

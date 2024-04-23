@@ -3,10 +3,11 @@ package pe.edu.upc.APPSI63.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.APPSI63.dtos.DiseñoDTO;
-import pe.edu.upc.APPSI63.entities.Diseño;
-import pe.edu.upc.APPSI63.servicesinterfaces.DiseñoService;
+import pe.edu.upc.APPSI63.dtos.ProductoDTO;
+import pe.edu.upc.APPSI63.entities.ProductoE;
+import pe.edu.upc.APPSI63.servicesinterfaces.ProductoService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,19 +16,20 @@ import java.util.stream.Collectors;
 @RequestMapping("/Prendas")
 public class ProductoController {
     @Autowired
-    private DiseñoService sS;
+    private ProductoService sS;
     @Operation(summary = "Registra Producto", description = "Registra Producto")
     @PostMapping
-    public void registrar(@RequestBody DiseñoDTO s){
+    public void registrar(@RequestBody ProductoDTO s){
         ModelMapper m=new ModelMapper();
-        Diseño sh=m.map(s, Diseño.class);
+        ProductoE sh=m.map(s, ProductoE.class);
         sS.insert(sh);
     }
     @GetMapping
-    public List<DiseñoDTO> list(){
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public List<ProductoDTO> list(){
         return sS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
-            return m.map(y, DiseñoDTO.class);
+            return m.map(y, ProductoDTO.class);
         }).collect(Collectors.toList());
     }
     @Operation(summary = "Eliminar Producto", description = "Eliminar Producto")
@@ -36,9 +38,9 @@ public class ProductoController {
         sS.delete(id);
     }
     @GetMapping("/{id}")
-    public DiseñoDTO listarId(@PathVariable("id") Integer id){
+    public ProductoDTO listarId(@PathVariable("id") Integer id){
         ModelMapper m= new ModelMapper();
-        DiseñoDTO dto=m.map(sS.listId(id), DiseñoDTO.class);
+        ProductoDTO dto=m.map(sS.listId(id), ProductoDTO.class);
         return dto;
     }
 
