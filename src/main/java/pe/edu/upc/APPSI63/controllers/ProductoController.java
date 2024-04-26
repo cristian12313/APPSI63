@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Prendas")
+@RequestMapping("/Producto")
 public class ProductoController {
     @Autowired
     private ProductoService sS;
@@ -25,7 +25,7 @@ public class ProductoController {
         sS.insert(sh);
     }
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('USUARIO')")
     public List<ProductoDTO> list(){
         return sS.list().stream().map(y->{
             ModelMapper m=new ModelMapper();
@@ -37,12 +37,4 @@ public class ProductoController {
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);
     }
-    @GetMapping("/{id}")
-    public ProductoDTO listarId(@PathVariable("id") Integer id){
-        ModelMapper m= new ModelMapper();
-        ProductoDTO dto=m.map(sS.listId(id), ProductoDTO.class);
-        return dto;
-    }
-
-
 }

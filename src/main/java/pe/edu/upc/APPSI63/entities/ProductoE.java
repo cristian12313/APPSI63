@@ -11,26 +11,23 @@ public class ProductoE {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int idProducto;
     @Column(name = "nombreProducto",nullable = false,length = 35)
-    private  String nombreDiseño;
-    @Column(name = "talla",nullable = false)
+    private  String nombreProducto;
+    @Column(name = "tallaProducto",nullable = false,length = 25)
     private String tallaProducto;
-    @Column(name = "PrendaDiseño",nullable = false,length = 25)
-    private String PrendaDiseño;
-    @Column(name = "color",nullable = false,length = 15)
-    private String color;
-    @Column(name = "Fecha",nullable = false)
-    private LocalDate Fecha;
+    @Column(name = "colorProducto",nullable = false,length = 25)
+    private String colorProducto;
+    @Column(name = "Confeccion",nullable = false,length = 15)
+    private String Confeccion;
 
     public ProductoE() {
     }
 
-    public ProductoE(int idProducto, String nombreDiseño, String tallaProducto, String PrendaDiseño, String color, LocalDate Fecha) {
+    public ProductoE(int idProducto, String nombreProducto, String tallaProducto, String colorProducto, String confeccion) {
         this.idProducto = idProducto;
-        this.nombreDiseño = nombreDiseño;
+        this.nombreProducto = nombreProducto;
         this.tallaProducto = tallaProducto;
-        this.PrendaDiseño = PrendaDiseño;
-        this.color = color;
-        this.Fecha = Fecha;
+        this.colorProducto = colorProducto;
+        Confeccion = confeccion;
     }
 
     public int getIdProducto() {
@@ -41,12 +38,12 @@ public class ProductoE {
         this.idProducto = idProducto;
     }
 
-    public String getNombreDiseño() {
-        return nombreDiseño;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setNombreDiseño(String nombreDiseño) {
-        this.nombreDiseño = nombreDiseño;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
     }
 
     public String getTallaProducto() {
@@ -57,27 +54,19 @@ public class ProductoE {
         this.tallaProducto = tallaProducto;
     }
 
-    public String getPrendaDiseño() {
-        return PrendaDiseño;
+    public String getColorProducto() {
+        return colorProducto;
     }
 
-    public void setPrendaDiseño(String PrendaDiseño) {
-        this.PrendaDiseño = PrendaDiseño;
+    public void setColorProducto(String colorProducto) {
+        this.colorProducto = colorProducto;
     }
 
-    public String getColor() {
-        return color;
+    public String getConfeccion() {
+        return Confeccion;
     }
 
-    public void setColor(String colorDiseño) {
-        this.color = colorDiseño;
-    }
-
-    public LocalDate getFecha() {
-        return Fecha;
-    }
-
-    public void setFecha(LocalDate Fecha) {
-        this.Fecha = Fecha;
+    public void setConfeccion(String confeccion) {
+        Confeccion = confeccion;
     }
 }

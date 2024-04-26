@@ -9,20 +9,17 @@ public class TipoProductoE {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTProducto;
+    @Column(name = "nombreTipo",nullable = false,length = 35)
+    private  String nombreTipo;
     @Column(name = "Descripcion",nullable = false,length = 35)
-    private  String Descripcion;
-    @Column(name = "Diseños",nullable = false,length = 35)
-    private String Diseños;
-    @Column(name = "ConfeccionePrendas",nullable = false,length = 25)
-    private String ConfeccionePrendas;
+    private String Descripcion;
     public TipoProductoE() {
     }
 
-    public TipoProductoE(int idTProducto, String descripcion, String diseños, String confeccionePrendas) {
+    public TipoProductoE(int idTProducto, String nombreTipo, String descripcion) {
         this.idTProducto = idTProducto;
+        this.nombreTipo = nombreTipo;
         Descripcion = descripcion;
-        Diseños = diseños;
-        ConfeccionePrendas = confeccionePrendas;
     }
 
     public int getIdTProducto() {
@@ -33,27 +30,19 @@ public class TipoProductoE {
         this.idTProducto = idTProducto;
     }
 
+    public String getNombreTipo() {
+        return nombreTipo;
+    }
+
+    public void setNombreTipo(String nombreTipo) {
+        this.nombreTipo = nombreTipo;
+    }
+
     public String getDescripcion() {
         return Descripcion;
     }
 
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
-    }
-
-    public String getDiseños() {
-        return Diseños;
-    }
-
-    public void setDiseños(String diseños) {
-        Diseños = diseños;
-    }
-
-    public String getConfeccionePrendas() {
-        return ConfeccionePrendas;
-    }
-
-    public void setConfeccionePrendas(String confeccionePrendas) {
-        ConfeccionePrendas = confeccionePrendas;
     }
 }

@@ -4,7 +4,7 @@ import pe.edu.upc.APPSI63.entities.ProductoE;
 
 import java.util.List;
 
-public interface ProductoService {
+public interface DetallePedidoService {
     public void insert(ProductoE productoE);
     public List<ProductoE> list();
     public void delete(int id);

@@ -11,18 +11,17 @@ public class InteraccionesE {
     private int idInteraccion;
     @Column(name = "Contenido",nullable = false,length = 35)
     private  String Contenido;
-    @Column(name = "TipoInteraccion",nullable = false,length = 35)
-    private String TipoInteraccion;
     @Column(name = "Fecha",nullable = false)
     private LocalDate Fecha;
+    public InteraccionesE() {
 
-    public InteraccionesE(int idInteraccion, String contenido, String tipoInteraccion, LocalDate fecha) {
-        this.idInteraccion = idInteraccion;
-        Contenido = contenido;
-        TipoInteraccion = tipoInteraccion;
-        Fecha = fecha;
     }
 
+    public InteraccionesE(int idInteraccion, String contenido, LocalDate fecha) {
+        this.idInteraccion = idInteraccion;
+        Contenido = contenido;
+        Fecha = fecha;
+    }
     public int getIdInteraccion() {
         return idInteraccion;
     }
@@ -39,13 +38,6 @@ public class InteraccionesE {
         Contenido = contenido;
     }
 
-    public String getTipoInteraccion() {
-        return TipoInteraccion;
-    }
-
-    public void setTipoInteraccion(String tipoInteraccion) {
-        TipoInteraccion = tipoInteraccion;
-    }
 
     public LocalDate getFecha() {
         return Fecha;

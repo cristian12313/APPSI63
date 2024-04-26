@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class InteraccionesDTO {
     private int idInteraccion;
     private  String Contenido;
-    private String TipoInteraccion;
     private LocalDate Fecha;
 
     public int getIdInteraccion() {
@@ -22,14 +21,6 @@ public class InteraccionesDTO {
 
     public void setContenido(String contenido) {
         Contenido = contenido;
-    }
-
-    public String getTipoInteraccion() {
-        return TipoInteraccion;
-    }
-
-    public void setTipoInteraccion(String tipoInteraccion) {
-        TipoInteraccion = tipoInteraccion;
     }
 
     public LocalDate getFecha() {

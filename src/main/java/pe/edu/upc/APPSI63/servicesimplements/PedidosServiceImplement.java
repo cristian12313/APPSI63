@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.APPSI63.entities.ProductoE;
 import pe.edu.upc.APPSI63.repositories.ProductoRepository;
-import pe.edu.upc.APPSI63.servicesinterfaces.ProductoService;
+import pe.edu.upc.APPSI63.servicesinterfaces.PedidosService;
 
 import java.util.List;
 @Service
-public class ProductoServiceImplement implements ProductoService {
+public class PedidosServiceImplement implements PedidosService {
     @Autowired
     private ProductoRepository sR;
     @Override
@@ -25,15 +25,4 @@ public class ProductoServiceImplement implements ProductoService {
     public void delete(int id) {
         sR.deleteById(id);
     }
-
 }
-
-
-
-
-
-
-
-
-
-

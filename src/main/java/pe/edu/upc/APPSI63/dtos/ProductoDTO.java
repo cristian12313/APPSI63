@@ -8,9 +8,8 @@ public class ProductoDTO {
     private int idProducto;
     private  String nombreProducto;
     private String tallaProducto;
-    private String PrendaDiseño;
-    private String color;
-    private LocalDate Fecha;
+    private String colorProducto;
+    private String Confeccion;
 
     public int getIdProducto() {
         return idProducto;
@@ -36,27 +35,19 @@ public class ProductoDTO {
         this.tallaProducto = tallaProducto;
     }
 
-    public String getPrendaDiseño() {
-        return PrendaDiseño;
+    public String getColorProducto() {
+        return colorProducto;
     }
 
-    public void setPrendaDiseño(String prendaDiseño) {
-        this.PrendaDiseño = prendaDiseño;
+    public void setColorProducto(String colorProducto) {
+        this.colorProducto = colorProducto;
     }
 
-    public String getColor() {
-        return color;
+    public String getConfeccion() {
+        return Confeccion;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public LocalDate getFecha() {
-        return Fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.Fecha = fecha;
+    public void setConfeccion(String confeccion) {
+        Confeccion = confeccion;
     }
 }

@@ -3,7 +3,6 @@ package pe.edu.upc.APPSI63.controllers;
 import io.swagger.v3.oas.annotations.Operation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.APPSI63.dtos.ProductoDTO;
 import pe.edu.upc.APPSI63.entities.ProductoE;
@@ -12,11 +11,11 @@ import pe.edu.upc.APPSI63.servicesinterfaces.ProductoService;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/TipoProducto")
-public class TipoProductoController {
+@RequestMapping("/Detalles")
+public class DetallePedidoController {
     @Autowired
     private ProductoService sS;
-    @Operation(summary = "Registra Producto", description = "Registra Producto")
+    @Operation(summary = "Registra", description = "Registra")
     @PostMapping
     public void registrar(@RequestBody ProductoDTO s){
         ModelMapper m=new ModelMapper();
@@ -30,7 +29,7 @@ public class TipoProductoController {
             return m.map(y, ProductoDTO.class);
         }).collect(Collectors.toList());
     }
-    @Operation(summary = "Eliminar Producto", description = "Eliminar Producto")
+    @Operation(summary = "Eliminar", description = "Eliminar")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);
