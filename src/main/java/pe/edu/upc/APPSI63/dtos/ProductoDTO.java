@@ -1,6 +1,7 @@
 package pe.edu.upc.APPSI63.dtos;
 
 
+import pe.edu.upc.APPSI63.entities.TipoProductoE;
 
 import java.time.LocalDate;
 
@@ -10,6 +11,7 @@ public class ProductoDTO {
     private String tallaProducto;
     private String colorProducto;
     private String Confeccion;
+    private TipoProductoE tipoproducto;
 
     public int getIdProducto() {
         return idProducto;
@@ -49,5 +51,13 @@ public class ProductoDTO {
 
     public void setConfeccion(String confeccion) {
         Confeccion = confeccion;
+    }
+
+    public TipoProductoE getTipoproducto() {
+        return tipoproducto;
+    }
+
+    public void setTipoproducto(TipoProductoE tipoproducto) {
+        this.tipoproducto = tipoproducto;
     }
 }

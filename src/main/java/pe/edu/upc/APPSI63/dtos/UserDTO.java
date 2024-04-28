@@ -9,6 +9,7 @@ public class UserDTO {
     private long telefono;
     private String Direccion;
     private String Correo;
+    private int quantityUser;
 
     public int getIdUser() {
         return idUser;
@@ -71,5 +72,13 @@ public class UserDTO {
 
     public void setCorreo(String correo) {
         Correo = correo;
+    }
+
+    public int getQuantityUser() {
+        return quantityUser;
+    }
+
+    public void setQuantityUser(int quantityUser) {
+        this.quantityUser = quantityUser;
     }
 }
