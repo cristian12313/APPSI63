@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "DetallePago")
-public class DetallePagoE {
+public class DetallePedidoE {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDetallePago;
@@ -18,15 +18,25 @@ public class DetallePagoE {
     private long Subtotal;
     @Column(name = "Fecha",nullable = false)
     private LocalDate Fecha;
-    public DetallePagoE() {
+    @ManyToOne
+    @JoinColumn(name = "IdProducto")
+    private  ProductoE producto;
+
+    @ManyToOne
+    @JoinColumn(name = "IdPedidos")
+    private  PedidosE pedidos;
+
+    public DetallePedidoE() {
     }
 
-    public DetallePagoE(int idDetallePago, String descripcion, String cantidad, long subtotal, LocalDate fecha) {
+    public DetallePedidoE(int idDetallePago, String descripcion, String cantidad, long subtotal, LocalDate fecha, ProductoE producto, PedidosE pedidos) {
         this.idDetallePago = idDetallePago;
         Descripcion = descripcion;
         Cantidad = cantidad;
         Subtotal = subtotal;
         Fecha = fecha;
+        this.producto = producto;
+        this.pedidos = pedidos;
     }
 
     public int getIdDetallePago() {
@@ -67,5 +77,21 @@ public class DetallePagoE {
 
     public void setFecha(LocalDate fecha) {
         Fecha = fecha;
+    }
+
+    public ProductoE getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ProductoE producto) {
+        this.producto = producto;
+    }
+
+    public PedidosE getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(PedidosE pedidos) {
+        this.pedidos = pedidos;
     }
 }

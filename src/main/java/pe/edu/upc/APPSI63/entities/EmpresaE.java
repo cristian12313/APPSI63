@@ -14,29 +14,35 @@ public class EmpresaE {
     private float valoracion;
     @Column(name = "Direccion",nullable = false,length = 35)
     private String Direccion;
+    @ManyToOne
+    @JoinColumn(name = "IdUser")
+    private  UserE user;
+
     public EmpresaE() {
     }
-    public EmpresaE(int idEmpresa, String nombreEmpresa, float valoracion, String direccion) {
+
+    public EmpresaE(int idEmpresa, String nombreEmpresa, float valoracion, String direccion, UserE user) {
         this.idEmpresa = idEmpresa;
         this.nombreEmpresa = nombreEmpresa;
         this.valoracion = valoracion;
         Direccion = direccion;
+        this.user = user;
     }
 
     public int getIdEmpresa() {
         return idEmpresa;
     }
 
-    public void setIdEmpresa(int idUser) {
-        this.idEmpresa = idUser;
+    public void setIdEmpresa(int idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
     }
 
-    public void setNombreEmpresa(String nombreUser) {
-        this.nombreEmpresa = nombreUser;
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
     }
 
     public float getValoracion() {
@@ -53,5 +59,13 @@ public class EmpresaE {
 
     public void setDireccion(String direccion) {
         Direccion = direccion;
+    }
+
+    public UserE getUser() {
+        return user;
+    }
+
+    public void setUser(UserE user) {
+        this.user = user;
     }
 }
