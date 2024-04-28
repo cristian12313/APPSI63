@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class TipoProductoController {
     @Autowired
     private TipoProductoService sS;
-    @Operation(summary = "Registra Producto", description = "Registra Producto")
+    @Operation(summary = "Registra ", description = "Registra ")
     @PostMapping
     public void registrar(@RequestBody TipoProductoDTO s){
         ModelMapper m=new ModelMapper();
@@ -33,7 +33,7 @@ public class TipoProductoController {
             return m.map(y, TipoProductoDTO.class);
         }).collect(Collectors.toList());
     }
-    @Operation(summary = "Eliminar Producto", description = "Eliminar Producto")
+    @Operation(summary = "Eliminar ", description = "Eliminar ")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);

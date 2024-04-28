@@ -13,14 +13,14 @@ import pe.edu.upc.APPSI63.servicesinterfaces.TipoPagoService;
 public class TipoPagoController {
     @Autowired
     private TipoPagoService sS;
-    @Operation(summary = "Registra Comentario", description = "Registra Comentario")
+    @Operation(summary = "Registra ", description = "Registra ")
     @PostMapping
     public void registrar(@RequestBody TipoPagoDTO s){
         ModelMapper m=new ModelMapper();
         TipoPagoE sh=m.map(s, TipoPagoE.class);
         sS.insert(sh);
     }
-    @Operation(summary = "Eliminar Comentario", description = "Eliminar Comentario")
+    @Operation(summary = "Eliminar ", description = "Eliminar ")
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         sS.delete(id);
