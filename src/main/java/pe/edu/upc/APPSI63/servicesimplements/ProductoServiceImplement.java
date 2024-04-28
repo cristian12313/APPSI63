@@ -12,8 +12,8 @@ public class ProductoServiceImplement implements ProductoService {
     @Autowired
     private ProductoRepository sR;
     @Override
-    public void insert(ProductoE shoe) {
-        sR.save(shoe);
+    public void insert(ProductoE productoE) {
+        sR.save(productoE);
     }
 
     @Override

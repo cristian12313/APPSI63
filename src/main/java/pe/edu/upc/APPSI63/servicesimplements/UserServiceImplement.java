@@ -12,8 +12,8 @@ public class UserServiceImplement implements UserService {
     @Autowired
     private UserRepository sR;
     @Override
-    public void insert(UserE shoe) {
-        sR.save(shoe);
+    public void insert(UserE userE) {
+        sR.save(userE);
     }
 
     @Override
@@ -30,4 +30,9 @@ public class UserServiceImplement implements UserService {
     public UserE listId(int id) {
         return sR.findById(id).orElse(new UserE());
     }
+    @Override
+    public List<String[]> quantityUser() {
+        return sR.quantityUser();
+    }
+
 }

@@ -12,8 +12,8 @@ public class EmpresaSeviceImplement implements EmpresaService {
     @Autowired
     private EmpresaRepository sR;
     @Override
-    public void insert(EmpresaE shoe) {
-        sR.save(shoe);
+    public void insert(EmpresaE empresaE) {
+        sR.save(empresaE);
     }
 
     @Override

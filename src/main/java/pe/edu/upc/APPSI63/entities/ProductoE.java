@@ -18,16 +18,20 @@ public class ProductoE {
     private String colorProducto;
     @Column(name = "Confeccion",nullable = false,length = 15)
     private String Confeccion;
+    @ManyToOne
+    @JoinColumn(name = "IdTipoProducto")
+    private  TipoProductoE tipoproducto;
 
     public ProductoE() {
     }
 
-    public ProductoE(int idProducto, String nombreProducto, String tallaProducto, String colorProducto, String confeccion) {
+    public ProductoE(int idProducto, String nombreProducto, String tallaProducto, String colorProducto, String confeccion, TipoProductoE tipoproducto) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.tallaProducto = tallaProducto;
         this.colorProducto = colorProducto;
         Confeccion = confeccion;
+        this.tipoproducto = tipoproducto;
     }
 
     public int getIdProducto() {
@@ -68,5 +72,13 @@ public class ProductoE {
 
     public void setConfeccion(String confeccion) {
         Confeccion = confeccion;
+    }
+
+    public TipoProductoE getTipoproducto() {
+        return tipoproducto;
+    }
+
+    public void setTipoproducto(TipoProductoE tipoproducto) {
+        this.tipoproducto = tipoproducto;
     }
 }
