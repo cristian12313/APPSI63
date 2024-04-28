@@ -4,11 +4,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.APPSI63.dtos.EmpresaDTO;
 import pe.edu.upc.APPSI63.dtos.InteraccionesDTO;
-import pe.edu.upc.APPSI63.entities.EmpresaE;
 import pe.edu.upc.APPSI63.entities.InteraccionesE;
-import pe.edu.upc.APPSI63.servicesinterfaces.EmpresaService;
 import pe.edu.upc.APPSI63.servicesinterfaces.InteraccionService;
 
 @RestController
