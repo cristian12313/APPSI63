@@ -8,6 +8,7 @@ import pe.edu.upc.APPSI63.dtos.UserDTO;
 import pe.edu.upc.APPSI63.entities.UserE;
 import pe.edu.upc.APPSI63.servicesinterfaces.UserService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,5 +41,17 @@ public class UserController {
         ModelMapper m= new ModelMapper();
         UserDTO dto=m.map(sS.listId(id), UserDTO.class);
         return dto;
+    }
+    @GetMapping("/cantidades")
+    public List<UserDTO> cantidadInsumos(){
+        List<String[]> filaLista=sS.quantityUser();
+        List<UserDTO> dtoLista=new ArrayList<>();
+        for(String[] columna:filaLista){
+            UserDTO dto=new UserDTO();
+            dto.setUsername(columna[0]);
+            dto.setQuantityUser(Integer.parseInt(columna[1]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     }
 }

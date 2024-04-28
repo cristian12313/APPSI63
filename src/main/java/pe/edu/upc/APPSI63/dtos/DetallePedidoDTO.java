@@ -1,5 +1,8 @@
 package pe.edu.upc.APPSI63.dtos;
 
+import pe.edu.upc.APPSI63.entities.PedidosE;
+import pe.edu.upc.APPSI63.entities.ProductoE;
+
 import java.time.LocalDate;
 
 public class DetallePedidoDTO {
@@ -8,6 +11,8 @@ public class DetallePedidoDTO {
     private  String Cantidad;
     private long Subtotal;
     private LocalDate Fecha;
+        private ProductoE producto;
+        private PedidosE pedidos;
 
     public int getIdDetallePago() {
         return idDetallePago;
@@ -47,5 +52,21 @@ public class DetallePedidoDTO {
 
     public void setFecha(LocalDate fecha) {
         Fecha = fecha;
+    }
+
+    public ProductoE getProducto() {
+        return producto;
+    }
+
+    public void setProducto(ProductoE producto) {
+        this.producto = producto;
+    }
+
+    public PedidosE getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(PedidosE pedidos) {
+        this.pedidos = pedidos;
     }
 }

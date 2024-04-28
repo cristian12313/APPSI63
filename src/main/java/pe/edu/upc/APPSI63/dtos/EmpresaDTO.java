@@ -1,16 +1,21 @@
 package pe.edu.upc.APPSI63.dtos;
 
+import pe.edu.upc.APPSI63.entities.EmpresaE;
+import pe.edu.upc.APPSI63.entities.UserE;
+
 public class EmpresaDTO {
     private int idEmpresa;
     private  String nombreEmpresa;
     private float valoracion;
     private String Direccion;
 
-    public int getIdUser() {
+    private UserE user;
+
+    public int getIdEmpresa() {
         return idEmpresa;
     }
 
-    public void setIdUser(int idEmpresa) {
+    public void setIdEmpresa(int idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
 
@@ -26,7 +31,7 @@ public class EmpresaDTO {
         return valoracion;
     }
 
-    public void setValoracion(long valoracion) {
+    public void setValoracion(float valoracion) {
         this.valoracion = valoracion;
     }
 
@@ -36,5 +41,13 @@ public class EmpresaDTO {
 
     public void setDireccion(String direccion) {
         Direccion = direccion;
+    }
+
+    public UserE getUser() {
+        return user;
+    }
+
+    public void setUser(UserE user) {
+        this.user = user;
     }
 }

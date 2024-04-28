@@ -13,15 +13,26 @@ public class InteraccionesE {
     private  String Contenido;
     @Column(name = "Fecha",nullable = false)
     private LocalDate Fecha;
+    @ManyToOne
+    @JoinColumn(name = "IdUser")
+    private  UserE user;
+
+    @ManyToOne
+    @JoinColumn(name = "IdEmpresa")
+    private  EmpresaE empresa;
+
     public InteraccionesE() {
 
     }
 
-    public InteraccionesE(int idInteraccion, String contenido, LocalDate fecha) {
+    public InteraccionesE(int idInteraccion, String contenido, LocalDate fecha, UserE user, EmpresaE empresa) {
         this.idInteraccion = idInteraccion;
         Contenido = contenido;
         Fecha = fecha;
+        this.user = user;
+        this.empresa = empresa;
     }
+
     public int getIdInteraccion() {
         return idInteraccion;
     }
@@ -38,12 +49,27 @@ public class InteraccionesE {
         Contenido = contenido;
     }
 
-
     public LocalDate getFecha() {
         return Fecha;
     }
 
     public void setFecha(LocalDate fecha) {
         Fecha = fecha;
+    }
+
+    public UserE getUser() {
+        return user;
+    }
+
+    public void setUser(UserE user) {
+        this.user = user;
+    }
+
+    public EmpresaE getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(EmpresaE empresa) {
+        this.empresa = empresa;
     }
 }

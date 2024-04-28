@@ -5,18 +5,22 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.APPSI63.dtos.EmpresaDTO;
+import pe.edu.upc.APPSI63.dtos.TipoPagoDTO;
 import pe.edu.upc.APPSI63.entities.EmpresaE;
+import pe.edu.upc.APPSI63.entities.TipoPagoE;
 import pe.edu.upc.APPSI63.servicesinterfaces.EmpresaService;
+import pe.edu.upc.APPSI63.servicesinterfaces.TipoPagoService;
+
 @RestController
 @RequestMapping("/TipoPago")
 public class TipoPagoController {
     @Autowired
-    private EmpresaService sS;
+    private TipoPagoService sS;
     @Operation(summary = "Registra Comentario", description = "Registra Comentario")
     @PostMapping
-    public void registrar(@RequestBody EmpresaDTO s){
+    public void registrar(@RequestBody TipoPagoDTO s){
         ModelMapper m=new ModelMapper();
-        EmpresaE sh=m.map(s, EmpresaE.class);
+        TipoPagoE sh=m.map(s, TipoPagoE.class);
         sS.insert(sh);
     }
     @Operation(summary = "Eliminar Comentario", description = "Eliminar Comentario")
